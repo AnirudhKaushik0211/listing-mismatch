@@ -43,7 +43,7 @@ The Live page runs this in your browser with **your own** Gemini API key. The ke
 Before you start: get a free Gemini API key from Google AI Studio (aistudio.google.com, "Get API key"). The free tier allows only about 20 requests per day, so plan on 4 requests for this demo.
 
 ### Step 1: open the Live check
-Go to the Live check link above, choose **Gemini**, paste your key, and tick the data-use notice.
+Go to the Live check link above, paste your key (the provider switches to **Gemini** by itself; if it still says Demo mock, a red banner tells you no model was called), and tick the data-use notice. The Live page uses tau 0.9, the same as the evaluated method. If Google returns an error (for example 503 or 429), the listing is shown as one failed row with the HTTP status, is left out of the match/mismatch/cannot-tell counts (reported as failed: N), and the **Retry failed** button resends only those listings.
 
 ### Step 2: check one listing (1 request)
 Use example A below: upload the image, type the title and attributes, and click **Check**.

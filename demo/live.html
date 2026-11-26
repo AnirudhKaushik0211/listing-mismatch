@@ -41,14 +41,17 @@
   <button id="stop" type="button">Stop</button>
 </section>
 <p id="message" role="status"></p>
+<p id="mockBanner" class="banner" role="alert">Demo mock selected: no model was called. Choose Gemini to run a real check.</p>
 <section>
   <h2>Results</h2>
   <p id="summary"></p>
-  <table id="results"><thead><tr><th>row</th><th>file</th><th>attribute</th><th>listing value</th><th>verdict</th><th>effective</th><th>confidence</th><th>reason</th><th>stamp</th></tr></thead><tbody></tbody></table>
+  <table id="results"><thead><tr><th>row</th><th>file</th><th>attribute</th><th>listing value</th><th>verdict</th><th>effective</th><th>confidence</th><th>reason</th><th>stamp</th><th>status</th></tr></thead><tbody></tbody></table>
   <button id="exportCsv" type="button">Export CSV</button>
   <button id="exportJson" type="button">Export JSON</button>
+  <button id="retryFailed" type="button" hidden>Retry failed</button>
 </section>
 <script src="core.bundle.js"></script>
+<script src="live-logic.js"></script>
 <script src="live.js"></script>
 </body>
 </html>

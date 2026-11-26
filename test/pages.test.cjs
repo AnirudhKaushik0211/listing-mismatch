@@ -138,7 +138,7 @@ test('static checks: results page and labelling page are network-free; live page
   assert.ok(html.includes(`content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src https://generativelanguage.googleapis.com; base-uri 'none'; form-action 'none'"`));
   assert.ok(html.indexOf('Content-Security-Policy') < html.indexOf('<title>'));
   assert.ok(!/<script(?![^>]*\bsrc=)[^>]*>/.test(html) && !/\son[a-z]+\s*=/.test(html));
-  for (const f of ['demo/live.js', 'demo/core.bundle.js', 'demo/live.html']) {
+  for (const f of ['demo/live.js', 'demo/live-logic.js', 'demo/core.bundle.js', 'demo/live.html']) {
     const t = read(f);
     assert.ok(!/innerHTML|outerHTML|insertAdjacentHTML|document\.write|\beval\s*\(|localStorage/.test(t), f);
     const hosts = (t.match(/https?:\/\/[A-Za-z0-9.-]+/g) || []).filter((h) => !/^https?:\/\/(generativelanguage\.googleapis\.com)$/.test(h));
@@ -146,7 +146,7 @@ test('static checks: results page and labelling page are network-free; live page
   }
   assert.ok(!/sessionStorage|remember/i.test(read('demo/live.js')) && !/remember/i.test(html), 'key is memory-only');
   assert.ok(/window\.top !== window\.self/.test(read('demo/live.js')), 'frame check');
-  assert.ok(read('demo/live.js').includes('free tier: about 20 requests per day'), 'Live page explains quota failures');
+  assert.ok(read('demo/live-logic.js').includes('about 20 requests per day, 5 per minute'), 'Live page explains quota failures');
   assert.ok(/type="password" autocomplete="off"/.test(html));
   assert.ok(read('demo/index.html').includes('Built with AI coding agents; Anirudh wrote the spec, gates and reviews.') && html.includes('Built with AI coding agents; Anirudh wrote the spec, gates and reviews.'));
   void solidJpeg;

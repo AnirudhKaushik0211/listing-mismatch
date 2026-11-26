@@ -1,0 +1,54 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('fs');
+const path = require('path');
+const vm = require('vm');
+const { ROOT } = require('./helpers.cjs');
+const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8');
+const ctx = { window: {} }; ctx.window = ctx; ctx.globalThis = ctx;
+vm.runInNewContext(read('demo/core.bundle.js'), ctx);
+vm.runInNewContext(read('demo/live-logic.js'), ctx);
+const LL = ctx.LiveLogic, C = ctx.ListingCore;
+
+test('live page tau is one constant and equals the frozen method tau', () => {
+  const frozen = JSON.parse(read('eval/freeze.json')).stages.method.tau;
+  assert.strictEqual(LL.TAU, 0.9); assert.strictEqual(LL.TAU, frozen);
+  assert.strictEqual(LL.TAU_LABEL, 'tau 0.9 (same as the evaluated method)');
+  const js = read('demo/live.js');
+  assert.ok(!/0\.7/.test(js) && /TAU = LL\.TAU/.test(js), 'live.js takes tau from the constant');
+});
+test('live page: key entry switches provider to Gemini unless mock was chosen explicitly', () => {
+  assert.strictEqual(LL.providerAfterKeyInput('mock', 'AIzaX', false, true), 'gemini');
+  assert.strictEqual(LL.providerAfterKeyInput('mock', 'AIzaX', true, true), 'mock');
+  assert.strictEqual(LL.providerAfterKeyInput('mock', '', false, true), 'mock');
+  assert.strictEqual(LL.providerAfterKeyInput('mock', 'AIzaX', false, false), 'mock');
+  assert.strictEqual(LL.providerAfterKeyInput('gemini', 'k', true, true), 'gemini');
+  const html = read('demo/live.html');
+  assert.ok(html.includes('id="mockBanner"') && html.includes('Demo mock selected: no model was called. Choose Gemini to run a real check.'));
+  assert.ok(html.indexOf('id="mockBanner"') < html.indexOf('<h2>Results</h2>'));
+  assert.strictEqual(LL.MOCK_BANNER, 'Demo mock selected: no model was called. Choose Gemini to run a real check.');
+});
+test('live page: error mapping, summary excludes failed listings, status column in exports', () => {
+  assert.match(LL.errorInfo(503).message, /overloaded or unavailable right now; try again in a few minutes\. No verdict was produced\./);
+  assert.match(LL.errorInfo(500).message, /overloaded/);
+  assert.match(LL.errorInfo(429).message, /Free-tier limit reached \(about 20 requests per day, 5 per minute\); try after the daily reset\./);
+  assert.strictEqual(LL.errorInfo(403).message, 'Key or request rejected; check the key.');
+  assert.strictEqual(LL.errorInfo(400).message, 'Key or request rejected; check the key.');
+  assert.strictEqual(LL.errorInfo(503).status, 503);
+  const attrs = { colour: 'red', item_type: 'Shirt' };
+  const good = { rowNumber: 1, image_filename: 'a.jpg', title: 't', listing_attributes: attrs, attributes: { colour: { verdict: 'mismatch', confidence: 0.95, reason: 'r', flags: [] }, item_type: { verdict: 'mismatch', confidence: 0.7, reason: 'r', flags: [] } } };
+  const bad = { rowNumber: 2, image_filename: 'b.jpg', title: '=cmd', listing_attributes: attrs, attributes: C.failedAttributes(['colour', 'item_type'], 'provider_error').attributes, failure: LL.errorInfo(429) };
+  const rows = LL.buildRows(C, [good, bad], LL.TAU, false);
+  const s = LL.summarize([good, bad], rows);
+  assert.deepStrictEqual({ ...s }, { match: 0, mismatch: 1, cannot_tell: 1, failed: 1 });
+  assert.strictEqual(rows.length, 3);
+  const fr = rows.find((r) => r.row === 2);
+  assert.strictEqual(fr.status, 'failed HTTP 429'); assert.strictEqual(fr.verdict, 'error'); assert.ok(fr.reason.includes('daily reset'));
+  assert.ok(rows.filter((r) => r.row === 1).every((r) => r.status === 'ok'));
+  const csv = LL.toCsv(C, rows);
+  assert.ok(csv.split('\r\n')[0].endsWith('"status"')); assert.ok(csv.includes('"failed HTTP 429"')); assert.ok(csv.includes('"\'=cmd"'), 'formula neutralised');
+  const mock = LL.buildRows(C, [good], LL.TAU, true);
+  assert.ok(mock.every((r) => r.stamp === C.MOCK_STAMP && r.stamp.includes('MOCK')));
+  assert.strictEqual(LL.statusText({ status: 0 }), 'failed network');
+});

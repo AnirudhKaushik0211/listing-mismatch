@@ -5,9 +5,9 @@
   if (window.top !== window.self) { document.body.textContent = 'This page does not run inside a frame. Open it directly.'; return; }
   var C = window.ListingCore;
   var $ = function (id) { return document.getElementById(id); };
-  var TAU = 0.7;
+  var LL = window.LiveLogic, TAU = LL.TAU;
   var key = '';
-  var results = [], files = {}, stopped = false, lastMock = true, failures = {};
+  var results = [], files = {}, stopped = false, lastMock = true, failures = {}, failByRow = {}, lastFiles = {}, userChoseMock = false;
 
   function setMessage(t) { $('message').textContent = C.redact(t, key); }
   function init() {
@@ -15,13 +15,17 @@
     $('modelNote').textContent = C.PINNED_MODEL ? 'Same identifier as eval/freeze.json. Live results are not part of the gate.' : '';
     if (!C.PINNED_MODEL) { var o = $('provider').querySelector('option[value=gemini]'); o.disabled = true; }
     $('clearKey').addEventListener('click', function () { key = ''; $('key').value = ''; setMessage('Key cleared.'); });
-    $('key').addEventListener('input', function () { key = $('key').value; });
+    $('key').addEventListener('input', function () { key = $('key').value; var sel = $('provider'); sel.value = LL.providerAfterKeyInput(sel.value, key, userChoseMock, !sel.querySelector('option[value=gemini]').disabled); updateBanner(); });
+    $('provider').addEventListener('change', function () { userChoseMock = $('provider').value === 'mock'; updateBanner(); });
+    $('retryFailed').addEventListener('click', retryFailed);
+    updateBanner();
     $('runSingle').addEventListener('click', runSingle);
     $('runBatch').addEventListener('click', runBatch);
     $('stop').addEventListener('click', function () { stopped = true; setMessage('Stopping after the requests in flight.'); });
-    $('exportCsv').addEventListener('click', function () { download('listing-check.csv', 'text/csv', C.toCsv(C.flattenResults(results, TAU, lastMock))); });
-    $('exportJson').addEventListener('click', function () { download('listing-check.json', 'application/json', JSON.stringify(C.flattenResults(results, TAU, lastMock), null, 1)); });
+    $('exportCsv').addEventListener('click', function () { download('listing-check.csv', 'text/csv', LL.toCsv(C, LL.buildRows(C, results, TAU, lastMock))); });
+    $('exportJson').addEventListener('click', function () { download('listing-check.json', 'application/json', JSON.stringify(LL.buildRows(C, results, TAU, lastMock), null, 1)); });
   }
+  function updateBanner() { $('mockBanner').hidden = $('provider').value !== 'mock'; }
   function download(name, type, text) {
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([text], { type: type })); a.download = name;
@@ -41,45 +45,42 @@
         var headers = { 'content-type': 'application/json' }; headers[req.headerName] = key;
         res = await fetch('https://' + req.host + req.path, { method: 'POST', headers: headers, body: JSON.stringify(req.body) });
       } catch (e) {
-        if (attempt >= waits.length || stopped) { failures.network = (failures.network || 0) + 1; var ne = new Error('network'); ne.kind = 'network'; throw ne; }
+        if (attempt >= waits.length || stopped) { var ne = new Error('network'); ne.kind = 'network'; ne.status = 0; throw ne; }
         await sleep(waits[attempt]); continue;
       }
       var text = await res.text();
       if (res.ok) { var p = C.parseGeminiResponse(JSON.parse(text)); return { rawText: p.rawText }; }
       var kind = C.mapGeminiStatus(res.status, text);
-      if (kind === 'auth') { var ae = new Error('The key was rejected.'); ae.kind = 'auth'; throw ae; }
-      // A 429 on the free tier is usually the daily or per-minute quota; retrying in seconds only spends more of it.
-      if (kind === 'server' && attempt < waits.length && !stopped) { await sleep(waits[attempt]); continue; }
-      failures[kind] = (failures[kind] || 0) + 1;
-      var e2 = new Error(kind); e2.kind = kind; throw e2;
+      if (kind === 'auth') { var ae = new Error('The key was rejected.'); ae.kind = 'auth'; ae.status = res.status; throw ae; }
+      // No automatic retry for 429 or 5xx: the user retries failed listings with the button.
+      var e2 = new Error(kind); e2.kind = kind; e2.status = res.status; throw e2;
     }
   }
-  async function execute(listings, imageFiles) {
+  async function execute(listings, imageFiles, keep) {
     var provider = $('provider').value;
     if (provider === 'gemini') {
       if (!$('ack').checked) { setMessage('Tick the notice box before the first call.'); return; }
       if (!key) { setMessage('Enter your key first.'); return; }
       if (!C.PINNED_MODEL) { setMessage('Real mode is disabled until the model is pinned.'); return; }
     }
-    stopped = false; lastMock = provider === 'mock'; failures = {};
+    stopped = false; lastMock = provider === 'mock'; failByRow = {};
     var bytesByName = {};
     for (var i = 0; i < listings.length; i++) { var f = imageFiles[listings[i].image_filename]; bytesByName[listings[i].image_filename] = await readBytes(f); }
     try {
-      results = await C.runBatch({
+      var fresh = await C.runBatch({
         listings: listings, provider: provider, concurrency: 2,
-        call: function (l, p) { var b = bytesByName[l.image_filename]; return geminiCall(l, p, b, C.sniffImage(b)); },
+        call: function (l, p) { var b = bytesByName[l.image_filename]; return geminiCall(l, p, b, C.sniffImage(b)).catch(function (e) { if (e && e.kind !== 'auth') failByRow[l.rowNumber] = LL.errorInfo(e.status); throw e; }); },
         onProgress: function (d, t) { setMessage('Done ' + d + ' of ' + t + '.'); }
       });
-      render(); setMessage('Finished ' + results.length + ' listing(s).' + (lastMock ? ' Demo mock: MOCK, NOT A MEASUREMENT.' : '') + failureText());
-    } catch (e) { setMessage(e && e.kind === 'auth' ? 'The key was rejected.' : 'Run stopped: ' + (e && e.kind ? e.kind : 'error')); }
+      fresh.forEach(function (r) { if (failByRow[r.rowNumber]) r.failure = failByRow[r.rowNumber]; });
+      if (keep) { var byRow = {}; fresh.forEach(function (r) { byRow[r.rowNumber] = r; }); results = results.map(function (r) { return byRow[r.rowNumber] || r; }); } else { results = fresh; lastFiles = imageFiles; }
+      render(); setMessage('Finished ' + fresh.length + ' listing(s).' + (lastMock ? ' Demo mock: MOCK, NOT A MEASUREMENT.' : ''));
+    } catch (e) { setMessage(e && e.kind === 'auth' ? 'HTTP ' + e.status + ': ' + LL.errorInfo(e.status).message : 'Run stopped: ' + (e && e.kind ? e.kind : 'error')); }
   }
-  function failureText() {
-    var k = Object.keys(failures);
-    if (!k.length) return '';
-    var s = ' Failed requests (shown as cannot_tell with confidence 0): ' + k.map(function (x) { return x + ' ' + failures[x]; }).join(', ') + '.';
-    if (failures.rate_limit) s += ' Rate limit or quota reached (free tier: about 20 requests per day and 5 per minute). Wait for the daily reset or a minute, then retry.';
-    if (failures.network) s += ' The request did not reach Google (network or browser block).';
-    return s;
+  function retryFailed() {
+    var failed = results.filter(function (r) { return r.failure; }).map(function (r) { return { rowNumber: r.rowNumber, title: r.title, image_filename: r.image_filename, attributes: r.listing_attributes }; });
+    if (!failed.length) { setMessage('No failed listings to retry.'); return; }
+    execute(failed, lastFiles, true);
   }
   async function runSingle() {
     var f = $('sImage').files[0];
@@ -109,16 +110,16 @@
     await execute(v.listings, files);
   }
   function render() {
-    var rows = C.flattenResults(results, TAU, lastMock), body = $('results').querySelector('tbody');
+    var rows = LL.buildRows(C, results, TAU, lastMock), body = $('results').querySelector('tbody');
     body.textContent = '';
-    var counts = { match: 0, mismatch: 0, cannot_tell: 0 };
+    var counts = LL.summarize(results, rows);
     rows.forEach(function (r) {
-      counts[r.effective_verdict]++;
       var tr = document.createElement('tr');
-      [r.row, r.image_filename, r.attribute, r.listing_value, r.verdict, r.effective_verdict, r.confidence, r.reason, r.stamp].forEach(function (c) { var td = document.createElement('td'); td.textContent = c === null || c === undefined ? '' : C.redact(String(c), key); tr.appendChild(td); });
+      [r.row, r.image_filename, r.attribute, r.listing_value, r.verdict, r.effective_verdict, r.confidence, r.reason, r.stamp, r.status].forEach(function (c) { var td = document.createElement('td'); td.textContent = c === null || c === undefined ? '' : C.redact(String(c), key); tr.appendChild(td); });
       body.appendChild(tr);
     });
-    $('summary').textContent = 'Effective verdicts at tau ' + TAU + ': match ' + counts.match + ', mismatch ' + counts.mismatch + ', cannot tell ' + counts.cannot_tell + '.' + (lastMock ? ' MOCK, NOT A MEASUREMENT.' : '');
+    $('summary').textContent = 'Effective verdicts at ' + LL.TAU_LABEL + ': match ' + counts.match + ', mismatch ' + counts.mismatch + ', cannot tell ' + counts.cannot_tell + '; failed: ' + counts.failed + '.' + (lastMock ? ' MOCK, NOT A MEASUREMENT.' : '');
+    $('retryFailed').hidden = counts.failed === 0;
   }
   init();
 })();
