@@ -8,6 +8,8 @@ Design reviews were run by AI review agents; the owner decided which findings to
 
 There are no users, no production deployment and no adoption. This is a portfolio project.
 
+Live demo: [Results page](https://anirudhkaushik0211.github.io/listing-mismatch/demo/) · [Live page (bring your own Gemini key)](https://anirudhkaushik0211.github.io/listing-mismatch/demo/live.html)
+
 ## Status and honest limits
 - **PILOT ON PRACTICE (DEV) DATA, NOT THE PRE-REGISTERED EVALUATION; full evaluation in progress.** The Results page (`demo/index.html`) shows a pilot: real `gemini-3.5-flash` verdicts on 15 planted and 7 natural *development* listings, with the colour baseline on the same listings and 95% Wilson intervals. These listings were also used to choose the threshold `tau` and the baseline settings, so the numbers are not an out-of-sample estimate and no rate on that page should be quoted as a result. Regenerate it offline with `node tools/build-pilot.cjs` (reads the local dev run files, makes no model call).
 - The pre-registered evaluation (docs/SPEC.md section 9) has not been run. Freeze stages 0 to 2 are recorded in `eval/HISTORY.md`; no held-out listing has been run, read or scored, and no evaluation verdict exists.
