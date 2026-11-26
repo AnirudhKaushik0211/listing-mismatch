@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; img-src 'self' file: data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing photo-vs-text mismatch detector: pilot results</title>
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<header>
+  <h1>Listing photo-vs-text mismatch detector</h1>
+  <p>Checks whether a product photo contradicts the listing title and attributes (colour, item type, material), per attribute, and compares a vision model with a cheap non-AI baseline. This page only shows precomputed results. It makes no network calls.</p>
+  <p class="note">Built with AI coding agents; Anirudh wrote the spec, gates and reviews.</p>
+  <p class="note">Design reviews were run by AI review agents; the owner decided which findings to accept.</p>
+</header>
+<div id="banner" class="banner" role="status">Loading results...</div>
+<main id="root"></main>
+<footer>
+  <p>There are no users, no production deployment and no adoption. This is a portfolio project.</p>
+  <p><a href="live.html">Live page</a> (bring your own Gemini key, or the offline demo mock).</p>
+</footer>
+<script src="pilot.js"></script>
+<script src="results.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

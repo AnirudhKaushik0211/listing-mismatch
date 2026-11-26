@@ -1,0 +1,3 @@
+{"status":"smoke","provider":"gemini","model":"gemini-3.5-flash","sets":["planted-dev"],"runId":"dev-vlm-gemini"}
+{"status":"dev","provider":"gemini","model":"gemini-3.5-flash","sets":["planted-dev"],"runId":"dev-sub1"}
+{"status":"dev","provider":"gemini","model":"gemini-3.5-flash","sets":["natural-dev"],"runId":"dev-sub1n"}

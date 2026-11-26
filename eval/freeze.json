@@ -1,0 +1,42 @@
+{
+ "stages": {
+  "gate": {
+   "createdAt": "2026-11-24T13:16:52.769Z",
+   "specFrozenRegion": "a323a86a63a299c184ef81885602b97672d5d53f9f25a3c319b78a62c30d766d",
+   "dataPlan": "cefb3df2aaf47751d4606f68c8e008a81e9d8dcb6440951c6096c683f7580d11",
+   "gateCode": "2ed7fbd8034673fbcef0edf25a6a42aef2e3d2f890bc55624256efffd5d9c9bb"
+  },
+  "data": {
+   "createdAt": "2026-11-24T13:19:12.821Z",
+   "src/lexicon.json": "5f29abbba18cb713cd7421ed21668938f37288f15466de5f40f57f11ca399c48",
+   "src/families.json": "d1a314457d6ce24974babc8f745b70327f1a6cf92ea96bf23ffed3f807b40473",
+   "data/splits/natural-dev.json": "b12514cbb31ac3e2d62085baf6963b0b0007f1051bcf792c5b6b5dd1ce11cf15",
+   "data/splits/planted-dev.json": "7d3f5bbec370af9dcfcdec37673c70297e9d181772da26fb6a48223c0229e27a",
+   "data/heldout/natural-heldout.json": "3f03bd45b2568c0146795b07f4afe00ed1a02c9c7ed9415758c52d242534cae5",
+   "data/heldout/planted-heldout.json": "02a27310cb1ba63e205881f58fa3dd73e02240bdf71590d7f5a6f36c7717b33a",
+   "data/splits/planting-log-dev.jsonl": "467029839aaade18a46dcca8d9223bc56e90f2fa4df767e172786f7335d94b3e",
+   "data/heldout/planting-log-heldout.jsonl": "8dddecd6ff5a2ac2837d862b2275c032933e73330c2eee7c323b2956faae1353",
+   "data/splits/image-hashes-natural-dev.txt": "1ff3d15908d046d590f440d00c4b2974becae5d5e9ce409543820b30a689a2af",
+   "data/splits/image-hashes-planted-dev.txt": "6a58c8bff6e9cfc5f863abd09834f35f51808e4067d131a48bd8735721c3ed08",
+   "data/heldout/image-hashes-natural-heldout.txt": "54eb3d6c747af231c4f0c948dec7a029d820c3a3132fe37f3043a77395a1a34e",
+   "data/heldout/image-hashes-planted-heldout.txt": "d3e3ceaed167a6190bd5e63e724220c20fabedf4d6fdb278d99b8cb3760c7e01",
+   "DATA-SOURCES.md": "35b46a48a58f0f86160a0e1c59ba8893817893de4aa4332475582d3c2000a77c"
+  },
+  "method": {
+   "createdAt": "2026-11-25T08:27:07.510Z",
+   "prompt": "3a9f54d7a6b6798788e02aecfeaf1558f7a65912c1fd7951c468b6a0919d300d",
+   "promptHash": "3a9f54d7a6b6798788e02aecfeaf1558f7a65912c1fd7951c468b6a0919d300d",
+   "families": "d1a314457d6ce24974babc8f745b70327f1a6cf92ea96bf23ffed3f807b40473",
+   "baselineTuning": "ec373ebdfcedede5908bbab6faa0a5befdb1403761ec8000b50bcc0e0a843b22",
+   "tau": 0.9,
+   "model": "gemini-3.5-flash",
+   "modelNote": "model not pinned by the provider",
+   "codeHash": "43a9e26b9935fc717860623e520e86d2d92e97cf9161cfdcbd64086de753ba91"
+  },
+  "labels": {
+   "createdAt": "2026-11-26T08:44:13.822Z",
+   "labels": "dfe6af601aa2734d4308a815b59110e3478dd8513b20d7ca2633e5c2f4b922eb",
+   "tasks": "896e2ebf46974c16672b73742bc2ee7e015eb5a88365961c74f5d273687a38de"
+  }
+ }
+}

@@ -1,0 +1,17 @@
+[
+ {
+  "item": "gate",
+  "text": "I approve the gate, thresholds, split sizes and freeze procedure in SPEC sections 8 to 10 and DATA-PLAN as written. I wrote or edited, and have read in full, the spec, gates and reviews, and I take responsibility for them.",
+  "date": "2026-11-24T13:05:11.336Z"
+ },
+ {
+  "item": "data-use",
+  "text": "I use the Gemini API free tier. I have read the ABO licence in data/SOURCES.lock.json and Google's Gemini API terms, and I accept sending the sampled public images and text through the free tier, where inputs may be used to improve Google products.",
+  "date": "2026-11-24T13:05:36.009Z"
+ },
+ {
+  "item": "labels-own",
+  "text": "I labelled these myself with no model output visible.",
+  "date": "2026-11-26T08:41:54.443Z"
+ }
+]

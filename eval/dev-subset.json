@@ -1,0 +1,38 @@
+{
+ "purpose": "reduced dev subset under the Gemini free-tier cap of 20 requests per day (owner decision 2026-11-24)",
+ "model": "gemini-3.5-flash",
+ "plantedDevCached": [
+  "B000BLI2K8",
+  "B000GXF4U2",
+  "B000GXF4UC",
+  "B000H7EATS",
+  "B001ELJB6S",
+  "B002KQ53O0",
+  "B0718YX1ZV",
+  "B072M1WJC7"
+ ],
+ "plantedDevNewFarColour": [
+  "B001BSOOJI",
+  "B075Z439H8",
+  "B07HPT2G8F",
+  "B07QGWMTDY",
+  "B071FMSYCH",
+  "B07XV19RQQ",
+  "B07WH2M1F4"
+ ],
+ "naturalDevNew": [
+  "B004C046RM",
+  "B079V2H2Q2",
+  "B008U4QK1G",
+  "B013P2DRJK",
+  "B07B78LXZJ",
+  "B07L8WCVBF",
+  "B072FVHRZ5",
+  "B074KKMQHB",
+  "B07HZ782D9",
+  "B07RXHXNW2"
+ ],
+ "newCalls": 17,
+ "retryBuffer": 3,
+ "selection": "round-robin by category in manifest order"
+}

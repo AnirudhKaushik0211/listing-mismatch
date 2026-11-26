@@ -1,0 +1,15 @@
+body { font-family: system-ui, sans-serif; margin: 0 auto; max-width: 980px; padding: 1rem; color: #1a1a1a; line-height: 1.45; }
+.banner { padding: .8rem 1rem; border-radius: 6px; background: #fff3cd; border: 1px solid #e0c36a; font-weight: 600; margin: 1rem 0; }
+.banner.measured { background: #e7f3e9; border-color: #8cc79a; }
+table { border-collapse: collapse; width: 100%; margin: .5rem 0 1.2rem; font-size: .92rem; }
+th, td { border: 1px solid #ccc; padding: .3rem .5rem; text-align: left; }
+th { background: #f2f4f8; }
+section { margin-bottom: 1.6rem; }
+.note, footer { color: #555; font-size: .92rem; }
+.ex { border: 1px solid #ddd; border-radius: 6px; padding: .5rem .7rem; margin: .4rem 0; }
+.stamp { display: inline-block; background: #b00020; color: #fff; padding: .1rem .5rem; border-radius: 4px; font-size: .8rem; margin-left: .4rem; }.banner.pilot { background: #fde7e7; border-color: #c0392b; color: #7a1c12; }
+.ex { display: flex; gap: .8rem; align-items: flex-start; }
+.exbody { flex: 1; min-width: 0; overflow-x: auto; }
+.ttl { font-weight: 600; }
+.thumb { height: auto; border: 1px solid #ddd; border-radius: 4px; }
+details { margin: 1rem 0; }

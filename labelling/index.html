@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; img-src 'self' file: data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing labelling</title>
+<link rel="stylesheet" href="labelling.css">
+</head>
+<body>
+<h1>Listing labelling</h1>
+<p class="q">Does the photo contradict this attribute value of the listing? <b>Match</b>: the photo is consistent with it. <b>Mismatch</b>: the photo clearly shows something different. <b>Cannot tell</b>: not visible, or the photo does not show the product. The title is context; the verdict is about the attribute value. You see no model output here.</p>
+<div class="bar">
+  <label>Set <select id="split"></select></label>
+  <button id="prev" type="button">Back</button>
+  <button id="next" type="button">Next</button>
+  <span id="progress"></span>
+  <button id="download" type="button">Download labels</button>
+  <label class="file">Load labels <input id="load" type="file" accept=".json,application/json"></label>
+</div>
+<p id="message" role="status"></p>
+<div id="card" hidden>
+  <img id="image" alt="Product photo of the listing" width="360">
+  <div class="text"><h2 id="title"></h2><div id="attrs"></div><p class="hint">Keys: 1 match, 2 mismatch, 3 cannot tell; Enter or right arrow next; left arrow back; up and down choose the attribute.</p></div>
+</div>
+<script src="tasks.js"></script>
+<script src="labelling.js"></script>
+</body>
+</html>

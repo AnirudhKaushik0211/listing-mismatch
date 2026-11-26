@@ -1,0 +1,8 @@
+{
+ "fg": 245,
+ "share": 0.33,
+ "objective": "maximise colour F1 (far stratum) on planted-dev (SPEC 5.1)",
+ "grid": { "fg": [215, 225, 235, 245], "share": [0.15, 0.2, 0.25, 0.33] },
+ "farF1": { "share0.15": 0.8333, "share0.20": 0.88, "share0.25": 0.9231, "share0.33_fg215to235": 0.963, "share0.33_fg245": 1.0 },
+ "note": "far stratum n=14; F1 depends only on share except fg 245 at share 0.33. Unique maximum, no tie rule needed."
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src https://generativelanguage.googleapis.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing mismatch detector: live page</title>
+<link rel="stylesheet" href="live.css">
+</head>
+<body>
+<h1>Live page: check your own listings</h1>
+<p class="note">Built with AI coding agents; Anirudh wrote the spec, gates and reviews. Live results are demonstrations, not measurements, and are not part of the evaluated gate. There are no users, no production deployment and no adoption.</p>
+<p>Model: <b id="model">unknown</b>. <span id="modelNote"></span></p>
+<section>
+  <h2>1. Provider and key</h2>
+  <label>Provider <select id="provider"><option value="mock">Demo mock (offline, no key)</option><option value="gemini">Gemini (your own key)</option></select></label>
+  <label>Key <input id="key" type="password" autocomplete="off" spellcheck="false"></label>
+  <button id="clearKey" type="button">Clear key</button>
+  <p class="notice"><label><input id="ack" type="checkbox"> Your key, the images and the text you enter are sent from your browser to Google under the Gemini API terms (the free tier may use inputs to improve Google products). Nothing is sent to the author. There is no analytics.</label></p>
+</section>
+<section>
+  <h2>2. Single listing</h2>
+  <div class="grid">
+    <label>Image <input id="sImage" type="file" accept="image/jpeg,image/png,image/webp"></label>
+    <label>Title <input id="sTitle" type="text" maxlength="250"></label>
+    <label>Colour <input id="sColour" type="text" maxlength="80"></label>
+    <label>Item type <input id="sType" type="text" maxlength="80"></label>
+    <label>Material <input id="sMaterial" type="text" maxlength="80"></label>
+    <label>Pattern <input id="sPattern" type="text" maxlength="80"></label>
+    <label>Pack count <input id="sPack" type="text" maxlength="3"></label>
+  </div>
+  <button id="runSingle" type="button">Check this listing</button>
+</section>
+<section>
+  <h2>3. Batch (at most 25 listings)</h2>
+  <p class="note">CSV or JSON with columns title, colour, item_type, image_filename and optional material, pattern, pack_count. Select the image files in the second picker; each image_filename must match a selected file name exactly. Local files only; image addresses are not supported.</p>
+  <label>Records <input id="bRecords" type="file" accept=".csv,.json,text/csv,application/json"></label>
+  <label>Images <input id="bImages" type="file" accept="image/jpeg,image/png,image/webp" multiple></label>
+  <button id="runBatch" type="button">Check batch</button>
+  <button id="stop" type="button">Stop</button>
+</section>
+<p id="message" role="status"></p>
+<section>
+  <h2>Results</h2>
+  <p id="summary"></p>
+  <table id="results"><thead><tr><th>row</th><th>file</th><th>attribute</th><th>listing value</th><th>verdict</th><th>effective</th><th>confidence</th><th>reason</th><th>stamp</th></tr></thead><tbody></tbody></table>
+  <button id="exportCsv" type="button">Export CSV</button>
+  <button id="exportJson" type="button">Export JSON</button>
+</section>
+<script src="core.bundle.js"></script>
+<script src="live.js"></script>
+</body>
+</html>

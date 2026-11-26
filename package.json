@@ -1,0 +1,21 @@
+﻿{
+    "name":  "listing-mismatch",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Listing photo-vs-text mismatch detector (portfolio project)",
+    "license":  "UNLICENSED",
+    "scripts":  {
+                    "test":  "node --test \"test/**/*.test.cjs\"",
+                    "fetch":  "node scripts/fetch-abo.cjs",
+                    "sample":  "node scripts/build-sample.cjs",
+                    "plant":  "node scripts/plant.cjs",
+                    "build-core":  "node scripts/build-core.cjs",
+                    "freeze":  "node scripts/freeze.cjs",
+                    "check":  "node scripts/listing-check.cjs",
+                    "eval":  "node scripts/eval.cjs",
+                    "scan":  "node scripts/denylist.cjs"
+                },
+    "dependencies":  {
+                         "jpeg-js":  "0.4.4"
+                     }
+}

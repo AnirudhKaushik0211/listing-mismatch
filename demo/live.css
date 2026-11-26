@@ -1,0 +1,10 @@
+body { font-family: system-ui, sans-serif; margin: 0 auto; max-width: 1000px; padding: 1rem; color: #1a1a1a; }
+section { margin-bottom: 1.4rem; }
+label { display: inline-block; margin: .2rem .8rem .2rem 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .4rem; }
+.grid input[type=text] { width: 100%; }
+.notice { background: #fff3cd; padding: .6rem; border-radius: 6px; }
+.note { color: #555; font-size: .92rem; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { border: 1px solid #ccc; padding: .25rem .4rem; text-align: left; vertical-align: top; }
+#message { font-weight: 600; }

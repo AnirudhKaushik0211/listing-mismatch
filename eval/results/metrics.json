@@ -1,0 +1,1674 @@
+{
+ "mock": true,
+ "model": "mock",
+ "modelNote": null,
+ "natural": {
+  "byChecker": {
+   "baseline-colour": {
+    "cannotTellRate": {
+     "hi": 0.7679393232503864,
+     "k": 7,
+     "lo": 0.2914379555856289,
+     "n": 13,
+     "p": 0.5384615384615384
+    },
+    "confirmed": 2,
+    "flags": 2,
+    "gatePairs": 13,
+    "hitRate": 1,
+    "hitRateCI": {
+     "hi": 1,
+     "k": 2,
+     "lo": 0.34238022395464934,
+     "n": 2,
+     "p": 1
+    },
+    "kappa3": 0.4347826086956522,
+    "kappa3CI": {
+     "hi": 0.6170212765957447,
+     "lo": 0.2641509433962264
+    },
+    "kappaBinary": 1,
+    "ownerMismatchPairs": 2,
+    "perAttribute": {
+     "colour": {
+      "cannotTell": {
+       "hi": 0.39033429165637346,
+       "k": 0,
+       "lo": 0,
+       "n": 6,
+       "p": 0
+      },
+      "f1": 1,
+      "fn": 0,
+      "fp": 0,
+      "n": 6,
+      "precision": 1,
+      "precisionCI": {
+       "hi": 1,
+       "k": 2,
+       "lo": 0.34238022395464934,
+       "n": 2,
+       "p": 1
+      },
+      "recall": 1,
+      "recallCI": {
+       "hi": 1,
+       "k": 2,
+       "lo": 0.34238022395464934,
+       "n": 2,
+       "p": 1
+      },
+      "tn": 4,
+      "tp": 2
+     },
+     "item_type": {
+      "cannotTell": {
+       "hi": 1,
+       "k": 5,
+       "lo": 0.5655175313406071,
+       "n": 5,
+       "p": 1
+      },
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 5,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": null,
+      "recallCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "tn": 5,
+      "tp": 0
+     },
+     "pack_count": {
+      "cannotTell": {
+       "hi": 1,
+       "k": 1,
+       "lo": 0.20654931179180275,
+       "n": 1,
+       "p": 1
+      },
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 1,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": null,
+      "recallCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "tn": 1,
+      "tp": 0
+     }
+    }
+   },
+   "baseline-text": {
+    "cannotTellRate": {
+     "hi": 0.33313951171360495,
+     "k": 1,
+     "lo": 0.013710421090226002,
+     "n": 13,
+     "p": 0.07692307692307693
+    },
+    "confirmed": 0,
+    "flags": 0,
+    "gatePairs": 13,
+    "hitRate": null,
+    "hitRateCI": {
+     "hi": null,
+     "k": 0,
+     "lo": null,
+     "n": 0,
+     "p": null
+    },
+    "kappa3": 0.3389830508474578,
+    "kappa3CI": {
+     "hi": 0.8214285714285714,
+     "lo": 0
+    },
+    "kappaBinary": 0,
+    "ownerMismatchPairs": 2,
+    "perAttribute": {
+     "colour": {
+      "cannotTell": {
+       "hi": 0.39033429165637346,
+       "k": 0,
+       "lo": 0,
+       "n": 6,
+       "p": 0
+      },
+      "f1": 0,
+      "fn": 2,
+      "fp": 0,
+      "n": 6,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": 0,
+      "recallCI": {
+       "hi": 0.6576197760453506,
+       "k": 0,
+       "lo": 0,
+       "n": 2,
+       "p": 0
+      },
+      "tn": 4,
+      "tp": 0
+     },
+     "item_type": {
+      "cannotTell": {
+       "hi": 0.43448246865939283,
+       "k": 0,
+       "lo": 0,
+       "n": 5,
+       "p": 0
+      },
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 5,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": null,
+      "recallCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "tn": 5,
+      "tp": 0
+     },
+     "pack_count": {
+      "cannotTell": {
+       "hi": 0.7934506882081973,
+       "k": 0,
+       "lo": 0,
+       "n": 1,
+       "p": 0
+      },
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 1,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": null,
+      "recallCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "tn": 1,
+      "tp": 0
+     }
+    }
+   },
+   "vlm": {
+    "cannotTellRate": {
+     "hi": 0.4223463125106327,
+     "k": 2,
+     "lo": 0.043258177965229065,
+     "n": 13,
+     "p": 0.15384615384615385
+    },
+    "confirmed": 2,
+    "flags": 2,
+    "gatePairs": 13,
+    "hitRate": 1,
+    "hitRateCI": {
+     "hi": 1,
+     "k": 2,
+     "lo": 0.34238022395464934,
+     "n": 2,
+     "p": 1
+    },
+    "kappa3": 1,
+    "kappa3CI": {
+     "hi": 1,
+     "lo": 1
+    },
+    "kappaBinary": 1,
+    "ownerMismatchPairs": 2,
+    "perAttribute": {
+     "colour": {
+      "cannotTell": {
+       "hi": 0.39033429165637346,
+       "k": 0,
+       "lo": 0,
+       "n": 6,
+       "p": 0
+      },
+      "f1": 1,
+      "fn": 0,
+      "fp": 0,
+      "n": 6,
+      "precision": 1,
+      "precisionCI": {
+       "hi": 1,
+       "k": 2,
+       "lo": 0.34238022395464934,
+       "n": 2,
+       "p": 1
+      },
+      "recall": 1,
+      "recallCI": {
+       "hi": 1,
+       "k": 2,
+       "lo": 0.34238022395464934,
+       "n": 2,
+       "p": 1
+      },
+      "tn": 4,
+      "tp": 2
+     },
+     "item_type": {
+      "cannotTell": {
+       "hi": 0.43448246865939283,
+       "k": 0,
+       "lo": 0,
+       "n": 5,
+       "p": 0
+      },
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 5,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": null,
+      "recallCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "tn": 5,
+      "tp": 0
+     },
+     "pack_count": {
+      "cannotTell": {
+       "hi": 0.7934506882081973,
+       "k": 0,
+       "lo": 0,
+       "n": 1,
+       "p": 0
+      },
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 1,
+      "precision": null,
+      "precisionCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "recall": null,
+      "recallCI": {
+       "hi": null,
+       "k": 0,
+       "lo": null,
+       "n": 0,
+       "p": null
+      },
+      "tn": 1,
+      "tp": 0
+     }
+    }
+   }
+  },
+  "cannotTellOnlyListings": 2,
+  "g05": {
+   "kappa": 1,
+   "ownerMismatch": 2
+  },
+  "g06": {
+   "confirmed": 2,
+   "flags": 2,
+   "rate": 1
+  },
+  "listings": 6,
+  "measured": true,
+  "perAttributeRate": {
+   "colour": {
+    "hi": 0.7000066870052566,
+    "k": 2,
+    "lo": 0.09677141021353448,
+    "n": 6,
+    "p": 0.3333333333333333
+   },
+   "item_type": {
+    "hi": 0.43448246865939283,
+    "k": 0,
+    "lo": 0,
+    "n": 5,
+    "p": 0
+   },
+   "pack_count": {
+    "hi": 0.7934506882081973,
+    "k": 0,
+    "lo": 0,
+    "n": 1,
+    "p": 0
+   }
+  },
+  "rate": {
+   "hi": 0.7000066870052566,
+   "k": 2,
+   "lo": 0.09677141021353448,
+   "n": 6,
+   "p": 0.3333333333333333
+  },
+  "rateByCategory": {
+   "CHAIR": {
+    "hi": 0.9054687953607992,
+    "k": 1,
+    "lo": 0.09453120463920085,
+    "n": 2,
+    "p": 0.5
+   },
+   "SHOES": {
+    "hi": 0.9054687953607992,
+    "k": 1,
+    "lo": 0.09453120463920085,
+    "n": 2,
+    "p": 0.5
+   },
+   "SOFA": {
+    "hi": 0.7934506882081973,
+    "k": 0,
+    "lo": 0,
+    "n": 1,
+    "p": 0
+   },
+   "TABLE": {
+    "hi": 0.7934506882081973,
+    "k": 0,
+    "lo": 0,
+    "n": 1,
+    "p": 0
+   }
+  },
+  "rateLower": {
+   "hi": 0.7000066870052566,
+   "k": 2,
+   "lo": 0.09677141021353448,
+   "n": 6,
+   "p": 0.3333333333333333
+  },
+  "rateUpperReading": {
+   "hi": 0.9032285897864654,
+   "k": 4,
+   "lo": 0.29999331299474324,
+   "n": 6,
+   "p": 0.6666666666666666
+  },
+  "tags": {
+   "byTag": {
+    "other": {
+     "count": 2,
+     "examples": [
+      "FX-N02",
+      "FX-N05"
+     ],
+     "share": {
+      "hi": 1,
+      "k": 2,
+      "lo": 0.34238022395464934,
+      "n": 2,
+      "p": 1
+     }
+    }
+   },
+   "tagged": 2,
+   "untagged": 0
+  },
+  "textDisagreements": 0
+ },
+ "ops": {
+  "attributeParseErrors": 0,
+  "failureRate": 0,
+  "failures": 0,
+  "pooled": true,
+  "sent": 16
+ },
+ "planted": {
+  "byChecker": {
+   "baseline-colour": {
+    "colour": {
+     "byCategory": {
+      "CHAIR": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 1,
+       "fn": 0,
+       "fp": 0,
+       "n": 3,
+       "precision": 1,
+       "precisionCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "recall": 1,
+       "recallCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "tn": 2,
+       "tp": 1
+      },
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 1,
+       "fn": 0,
+       "fp": 0,
+       "n": 3,
+       "precision": 1,
+       "precisionCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "recall": 1,
+       "recallCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "tn": 2,
+       "tp": 1
+      },
+      "SOFA": {
+       "cannotTell": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 1,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 1,
+       "tp": 0
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 2,
+       "tp": 0
+      }
+     },
+     "byStratum": {
+      "far": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": 1,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": 1,
+       "precisionCI": {
+        "hi": 1,
+        "k": 2,
+        "lo": 0.34238022395464934,
+        "n": 2,
+        "p": 1
+       },
+       "recall": 1,
+       "recallCI": {
+        "hi": 1,
+        "k": 2,
+        "lo": 0.34238022395464934,
+        "n": 2,
+        "p": 1
+       },
+       "tn": 0,
+       "tp": 2
+      }
+     },
+     "cannotTell": {
+      "hi": 0.2991450517270439,
+      "k": 0,
+      "lo": 0,
+      "n": 9,
+      "p": 0
+     },
+     "f1": 1,
+     "fn": 0,
+     "fp": 0,
+     "n": 9,
+     "precision": 1,
+     "precisionCI": {
+      "hi": 1,
+      "k": 2,
+      "lo": 0.34238022395464934,
+      "n": 2,
+      "p": 1
+     },
+     "recall": 1,
+     "recallCI": {
+      "hi": 1,
+      "k": 2,
+      "lo": 0.34238022395464934,
+      "n": 2,
+      "p": 1
+     },
+     "tn": 7,
+     "tp": 2
+    }
+   },
+   "baseline-text": {
+    "colour": {
+     "byCategory": {
+      "CHAIR": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "SOFA": {
+       "cannotTell": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 1,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 1,
+       "tp": 0
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 2,
+       "tp": 0
+      }
+     },
+     "byStratum": {
+      "far": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": 0,
+       "fn": 2,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "tn": 0,
+       "tp": 0
+      }
+     },
+     "cannotTell": {
+      "hi": 0.2991450517270439,
+      "k": 0,
+      "lo": 0,
+      "n": 9,
+      "p": 0
+     },
+     "f1": 0,
+     "fn": 2,
+     "fp": 0,
+     "n": 9,
+     "precision": null,
+     "precisionCI": {
+      "hi": null,
+      "k": 0,
+      "lo": null,
+      "n": 0,
+      "p": null
+     },
+     "recall": 0,
+     "recallCI": {
+      "hi": 0.6576197760453506,
+      "k": 0,
+      "lo": 0,
+      "n": 2,
+      "p": 0
+     },
+     "tn": 7,
+     "tp": 0
+    },
+    "item_type": {
+     "byCategory": {
+      "CHAIR": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 3,
+       "tp": 0
+      },
+      "SOFA": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 1,
+       "tp": 0
+      }
+     },
+     "byStratum": {},
+     "cannotTell": {
+      "hi": 0.2775328030260577,
+      "k": 0,
+      "lo": 0,
+      "n": 10,
+      "p": 0
+     },
+     "f1": 0,
+     "fn": 2,
+     "fp": 0,
+     "n": 10,
+     "precision": null,
+     "precisionCI": {
+      "hi": null,
+      "k": 0,
+      "lo": null,
+      "n": 0,
+      "p": null
+     },
+     "recall": 0,
+     "recallCI": {
+      "hi": 0.6576197760453506,
+      "k": 0,
+      "lo": 0,
+      "n": 2,
+      "p": 0
+     },
+     "tn": 8,
+     "tp": 0
+    },
+    "material": {
+     "byCategory": {
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 1,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 1,
+       "tp": 0
+      }
+     },
+     "byStratum": {},
+     "cannotTell": {
+      "hi": 0.4898908403969213,
+      "k": 0,
+      "lo": 0,
+      "n": 4,
+      "p": 0
+     },
+     "f1": 0,
+     "fn": 1,
+     "fp": 0,
+     "n": 4,
+     "precision": null,
+     "precisionCI": {
+      "hi": null,
+      "k": 0,
+      "lo": null,
+      "n": 0,
+      "p": null
+     },
+     "recall": 0,
+     "recallCI": {
+      "hi": 0.7934506882081973,
+      "k": 0,
+      "lo": 0,
+      "n": 1,
+      "p": 0
+     },
+     "tn": 3,
+     "tp": 0
+    }
+   },
+   "vlm": {
+    "colour": {
+     "byCategory": {
+      "CHAIR": {
+       "cannotTell": {
+        "hi": 0.7923404011921757,
+        "k": 1,
+        "lo": 0.061491944020930805,
+        "n": 3,
+        "p": 0.3333333333333333
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.7923404011921757,
+        "k": 1,
+        "lo": 0.061491944020930805,
+        "n": 3,
+        "p": 0.3333333333333333
+       },
+       "f1": 0,
+       "fn": 1,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "SOFA": {
+       "cannotTell": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 1,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 1,
+       "tp": 0
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 2,
+       "tp": 0
+      }
+     },
+     "byStratum": {
+      "far": {
+       "cannotTell": {
+        "hi": 1,
+        "k": 2,
+        "lo": 0.34238022395464934,
+        "n": 2,
+        "p": 1
+       },
+       "f1": 0,
+       "fn": 2,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": 0,
+       "recallCI": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "tn": 0,
+       "tp": 0
+      }
+     },
+     "cannotTell": {
+      "hi": 0.5474110333077882,
+      "k": 2,
+      "lo": 0.06322510654056956,
+      "n": 9,
+      "p": 0.2222222222222222
+     },
+     "f1": 0,
+     "fn": 2,
+     "fp": 0,
+     "n": 9,
+     "precision": null,
+     "precisionCI": {
+      "hi": null,
+      "k": 0,
+      "lo": null,
+      "n": 0,
+      "p": null
+     },
+     "recall": 0,
+     "recallCI": {
+      "hi": 0.6576197760453506,
+      "k": 0,
+      "lo": 0,
+      "n": 2,
+      "p": 0
+     },
+     "tn": 7,
+     "tp": 0
+    },
+    "item_type": {
+     "byCategory": {
+      "CHAIR": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 0.6666666666666666,
+       "fn": 0,
+       "fp": 1,
+       "n": 3,
+       "precision": 0.5,
+       "precisionCI": {
+        "hi": 0.9054687953607992,
+        "k": 1,
+        "lo": 0.09453120463920085,
+        "n": 2,
+        "p": 0.5
+       },
+       "recall": 1,
+       "recallCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "tn": 1,
+       "tp": 1
+      },
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 3,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 3,
+       "tp": 0
+      },
+      "SOFA": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 2,
+       "tp": 0
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.6576197760453506,
+        "k": 0,
+        "lo": 0,
+        "n": 2,
+        "p": 0
+       },
+       "f1": 1,
+       "fn": 0,
+       "fp": 0,
+       "n": 2,
+       "precision": 1,
+       "precisionCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "recall": 1,
+       "recallCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "tn": 1,
+       "tp": 1
+      }
+     },
+     "byStratum": {},
+     "cannotTell": {
+      "hi": 0.2775328030260577,
+      "k": 0,
+      "lo": 0,
+      "n": 10,
+      "p": 0
+     },
+     "f1": 0.8,
+     "fn": 0,
+     "fp": 1,
+     "n": 10,
+     "precision": 0.6666666666666666,
+     "precisionCI": {
+      "hi": 0.9385080559790691,
+      "k": 2,
+      "lo": 0.2076595988078242,
+      "n": 3,
+      "p": 0.6666666666666666
+     },
+     "recall": 1,
+     "recallCI": {
+      "hi": 1,
+      "k": 2,
+      "lo": 0.34238022395464934,
+      "n": 2,
+      "p": 1
+     },
+     "tn": 7,
+     "tp": 2
+    },
+    "material": {
+     "byCategory": {
+      "SHOES": {
+       "cannotTell": {
+        "hi": 0.5614970356393196,
+        "k": 0,
+        "lo": 0,
+        "n": 3,
+        "p": 0
+       },
+       "f1": 1,
+       "fn": 0,
+       "fp": 0,
+       "n": 3,
+       "precision": 1,
+       "precisionCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "recall": 1,
+       "recallCI": {
+        "hi": 1,
+        "k": 1,
+        "lo": 0.20654931179180275,
+        "n": 1,
+        "p": 1
+       },
+       "tn": 2,
+       "tp": 1
+      },
+      "TABLE": {
+       "cannotTell": {
+        "hi": 0.7934506882081973,
+        "k": 0,
+        "lo": 0,
+        "n": 1,
+        "p": 0
+       },
+       "f1": null,
+       "fn": 0,
+       "fp": 0,
+       "n": 1,
+       "precision": null,
+       "precisionCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "recall": null,
+       "recallCI": {
+        "hi": null,
+        "k": 0,
+        "lo": null,
+        "n": 0,
+        "p": null
+       },
+       "tn": 1,
+       "tp": 0
+      }
+     },
+     "byStratum": {},
+     "cannotTell": {
+      "hi": 0.4898908403969213,
+      "k": 0,
+      "lo": 0,
+      "n": 4,
+      "p": 0
+     },
+     "f1": 1,
+     "fn": 0,
+     "fp": 0,
+     "n": 4,
+     "precision": 1,
+     "precisionCI": {
+      "hi": 1,
+      "k": 1,
+      "lo": 0.20654931179180275,
+      "n": 1,
+      "p": 1
+     },
+     "recall": 1,
+     "recallCI": {
+      "hi": 1,
+      "k": 1,
+      "lo": 0.20654931179180275,
+      "n": 1,
+      "p": 1
+     },
+     "tn": 3,
+     "tp": 1
+    }
+   }
+  },
+  "colourFar": {
+   "cannotTell": {
+    "hi": 0.5474110333077882,
+    "k": 2,
+    "lo": 0.06322510654056956,
+    "n": 9,
+    "p": 0.2222222222222222
+   },
+   "f1": 0,
+   "fn": 2,
+   "fp": 0,
+   "n": 9,
+   "precision": null,
+   "precisionCI": {
+    "hi": null,
+    "k": 0,
+    "lo": null,
+    "n": 0,
+    "p": null
+   },
+   "recall": 0,
+   "recallCI": {
+    "hi": 0.6576197760453506,
+    "k": 0,
+    "lo": 0,
+    "n": 2,
+    "p": 0
+   },
+   "tn": 7,
+   "tp": 0
+  },
+  "g03": {
+   "hi": 0.31394082911909027,
+   "k": 2,
+   "lo": 0.029358560033196816,
+   "n": 19,
+   "p": 0.10526315789473684,
+   "rate": 0.10526315789473684
+  },
+  "g04": {
+   "baselineF1": 1,
+   "bootstrapResamples": 8956,
+   "diff": -1,
+   "hi": -1,
+   "lo": -1,
+   "vlmF1": 0
+  },
+  "itemType": {
+   "cannotTell": {
+    "hi": 0.2775328030260577,
+    "k": 0,
+    "lo": 0,
+    "n": 10,
+    "p": 0
+   },
+   "f1": 0.8,
+   "fn": 0,
+   "fp": 1,
+   "n": 10,
+   "precision": 0.6666666666666666,
+   "precisionCI": {
+    "hi": 0.9385080559790691,
+    "k": 2,
+    "lo": 0.2076595988078242,
+    "n": 3,
+    "p": 0.6666666666666666
+   },
+   "recall": 1,
+   "recallCI": {
+    "hi": 1,
+    "k": 2,
+    "lo": 0.34238022395464934,
+    "n": 2,
+    "p": 1
+   },
+   "tn": 7,
+   "tp": 2
+  },
+  "listings": 10,
+  "nearColour": {
+   "baseline-colour": {
+    "flagged": 0,
+    "n": 1
+   },
+   "baseline-text": {
+    "flagged": 0,
+    "n": 1
+   },
+   "vlm": {
+    "flagged": 0,
+    "n": 1
+   }
+  }
+ },
+ "promptHash": "3a9f54d7a6b6798788e02aecfeaf1558f7a65912c1fd7951c468b6a0919d300d",
+ "provider": "mock",
+ "runId": "mock-fixture",
+ "tau": 0.6
+}

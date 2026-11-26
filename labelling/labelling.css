@@ -1,0 +1,14 @@
+body { font-family: system-ui, sans-serif; margin: 1rem auto; max-width: 960px; padding: 0 1rem; color: #1a1a1a; }
+.q { background: #f3f6fb; padding: .6rem .8rem; border-radius: 6px; }
+.bar { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: .6rem 0; }
+#card { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; }
+#image { max-width: 360px; height: auto; border: 1px solid #ccc; background: #fff; }
+.text { flex: 1; min-width: 280px; }
+.attr { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; padding: .4rem; border-radius: 6px; margin-bottom: .3rem; }
+.attr.focus { outline: 2px solid #2a6fdb; }
+.attr .name { min-width: 14rem; font-weight: 600; }
+button { padding: .35rem .7rem; cursor: pointer; }
+button.on.match { background: #cfe9d4; }
+button.on.mismatch { background: #f5cccc; }
+button.on.cannot_tell { background: #e6e6e6; }
+.hint { color: #555; font-size: .9rem; }

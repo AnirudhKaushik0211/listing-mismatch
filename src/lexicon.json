@@ -1,0 +1,18 @@
+{
+  "note": "Written before freeze stage 1 from the inventory counts (SHOES, CHAIR, TABLE, SOFA) and general knowledge. Look-alike pairs are excluded as swap targets.",
+  "itemTypes": {
+    "SHOES": { "display": "shoes", "department": "footwear", "nouns": ["shoes","shoe","sneakers","sneaker","sandals","sandal","slippers","slipper","boots","boot","loafers","loafer","flats","heels","pumps"], "primary": "shoes", "targets": [] },
+    "CHAIR": { "display": "chair", "department": "furniture", "nouns": ["chairs","chair","armchair","recliner","stool"], "primary": "chair", "targets": ["TABLE"] },
+    "TABLE": { "display": "table", "department": "furniture", "nouns": ["tables","table","desk","nightstand"], "primary": "table", "targets": ["CHAIR","SOFA"] },
+    "SOFA": { "display": "sofa", "department": "furniture", "nouns": ["sofas","sofa","couch","loveseat","sectional"], "primary": "sofa", "targets": ["TABLE"] }
+  },
+  "confusable": [["SHOES","SANDAL"],["CHAIR","SOFA"],["CHAIR","STOOL_SEATING"],["SOFA","LOVESEAT"]],
+  "materials": {
+    "leather": ["leather"], "cotton": ["cotton","canvas","linen"], "wool": ["wool","cashmere"], "polyester": ["polyester","nylon","microfiber","microfibre"],
+    "metal": ["metal","steel","iron","aluminum","aluminium","brass"], "wood": ["wood","wooden","oak","pine","bamboo","plywood","mdf"],
+    "plastic": ["plastic","polypropylene","acrylic","pvc"], "glass": ["glass"], "ceramic": ["ceramic","porcelain"], "rubber": ["rubber"], "foam": ["foam","memory foam"]
+  },
+  "materialSimilar": [["leather","faux leather"],["cotton","linen"],["cotton","canvas"],["polyester","nylon"],["wood","plywood"]],
+  "patterns": { "solid": ["solid","plain"], "striped": ["striped","stripe","stripes"], "floral": ["floral","flower","flowers"], "checked": ["checked","check","plaid","gingham"], "geometric": ["geometric","abstract"], "animal_print": ["leopard","zebra","animal print","snake"], "polka_dot": ["polka dot","polka dots","dotted"] },
+  "patternSimilar": [["checked","plaid"],["geometric","abstract"]]
+}

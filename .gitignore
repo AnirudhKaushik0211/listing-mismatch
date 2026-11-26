@@ -1,0 +1,8 @@
+data/
+node_modules/
+eval/cache/
+eval/results-private/
+eval/prices.json
+eval/cost.json
+.denylist.local
+.agents/

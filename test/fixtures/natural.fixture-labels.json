@@ -1,0 +1,110 @@
+{
+ "schema": "listing-mismatch-labels/v1",
+ "split": "fixture-natural",
+ "tasksHash": "4f53de9784c3e1352673d94b07e913fc4d2b6e607f5cecaec3cae87ae559a7f4",
+ "labeller": "fixture",
+ "synthetic": true,
+ "createdAt": "2000-01-01T00:00:00.000Z",
+ "labels": [
+  {
+   "id": "FX-N01",
+   "attributes": {
+    "colour": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    },
+    "item_type": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    }
+   }
+  },
+  {
+   "id": "FX-N02",
+   "attributes": {
+    "colour": {
+     "verdict": "mismatch",
+     "tag": "other",
+     "note": ""
+    },
+    "item_type": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    }
+   }
+  },
+  {
+   "id": "FX-N03",
+   "attributes": {
+    "colour": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    },
+    "item_type": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    },
+    "pack_count": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    }
+   }
+  },
+  {
+   "id": "FX-N04",
+   "attributes": {
+    "colour": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    },
+    "item_type": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    },
+    "material": {
+     "verdict": "cannot_tell",
+     "tag": null,
+     "note": ""
+    }
+   }
+  },
+  {
+   "id": "FX-N05",
+   "attributes": {
+    "colour": {
+     "verdict": "mismatch",
+     "tag": "other",
+     "note": ""
+    },
+    "item_type": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    }
+   }
+  },
+  {
+   "id": "FX-N06",
+   "attributes": {
+    "colour": {
+     "verdict": "match",
+     "tag": null,
+     "note": ""
+    },
+    "item_type": {
+     "verdict": "cannot_tell",
+     "tag": null,
+     "note": ""
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+﻿{
+  "families": ["black","white","grey","brown","beige","red","orange","yellow","green","blue","purple","pink"],
+  "prototypes": {
+    "black": [25,25,25], "white": [245,245,245], "grey": [128,128,128], "brown": [110,70,40],
+    "beige": [225,205,170], "red": [200,30,40], "orange": [240,130,30], "yellow": [240,215,50],
+    "green": [40,140,60], "blue": [35,65,160], "purple": [130,60,150], "pink": [240,130,170]
+  },
+  "near": {
+    "black": ["grey","brown","blue"], "white": ["beige","grey"], "grey": ["black","white","blue"],
+    "brown": ["black","beige","orange","red"], "beige": ["white","brown","yellow"],
+    "red": ["pink","orange","brown","purple"], "orange": ["red","yellow","brown"],
+    "yellow": ["orange","beige","green"], "green": ["blue","yellow"],
+    "blue": ["purple","green","black","grey"], "purple": ["blue","pink","red"], "pink": ["red","purple"]
+  },
+  "names": {
+    "black": "black", "jet": "black", "ebony": "black", "onyx": "black",
+    "white": "white", "ivory": "white", "snow": "white",
+    "grey": "grey", "gray": "grey", "silver": "grey", "charcoal": "grey", "slate": "grey", "graphite": "grey", "gunmetal": "grey",
+    "brown": "brown", "tan": "brown", "chocolate": "brown", "coffee": "brown", "espresso": "brown", "walnut": "brown", "cognac": "brown", "mocha": "brown", "chestnut": "brown", "bronze": "brown", "cocoa": "brown",
+    "beige": "beige", "cream": "beige", "khaki": "beige", "taupe": "beige", "sand": "beige", "camel": "beige", "natural": "beige", "nude": "beige",
+    "red": "red", "maroon": "red", "burgundy": "red", "wine": "red", "crimson": "red", "cherry": "red", "scarlet": "red",
+    "orange": "orange", "rust": "orange", "coral": "orange", "peach": "orange", "terracotta": "orange",
+    "yellow": "yellow", "mustard": "yellow", "gold": "yellow", "golden": "yellow", "lemon": "yellow",
+    "green": "green", "olive": "green", "emerald": "green", "lime": "green", "sage": "green", "mint": "green", "forest": "green",
+    "blue": "blue", "navy": "blue", "teal": "blue", "turquoise": "blue", "cyan": "blue", "aqua": "blue", "cobalt": "blue", "denim": "blue", "indigo": "blue", "azure": "blue",
+    "purple": "purple", "violet": "purple", "lavender": "purple", "plum": "purple", "lilac": "purple", "mauve": "purple",
+    "pink": "pink", "rose": "pink", "magenta": "pink", "fuchsia": "pink", "blush": "pink"
+  },
+  "multi": ["multi", "multicolor", "multicolour", "multi-color", "multicolored", "assorted", "mixed", "rainbow", "multiple"]
+}
