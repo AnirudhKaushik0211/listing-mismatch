@@ -5,31 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<title>Listing photo-vs-text mismatch detector</title>
-<link rel="stylesheet" href="demo/demo.css">
+<title>Listing mismatch detector</title>
+<link rel="stylesheet" href="landing.css">
 </head>
 <body>
 <main>
-<h1>Listing photo-vs-text mismatch detector</h1>
-<p>Checks whether a product photo agrees with its listing text (colour, item type, material, pack count, pattern) using a vision-language model, and flags contradictions with a confidence and a one-line reason.</p>
+<section class="hero">
+<h1>Listing mismatch detector</h1>
+<p class="tag">Catches product listings whose photo contradicts the text.</p>
+<ul class="chips">
+<li>Vision model with abstention</li>
+<li>Pre-registered evaluation</li>
+<li>Your key stays in your browser</li>
+</ul>
+<div class="btns">
+<a class="btn primary" href="demo/index.html">Try the demo</a>
+<a class="btn ghost" href="#evaluation">How it was evaluated</a>
+</div>
+<figure class="shot">
+<img src="assets/hero-demo.png" width="972" height="288" alt="Demo result for a folding canopy chair listed as blue: colour flagged as a mismatch because the chair is red, item type matches, material left as cannot tell.">
+<figcaption>Demo, Results mode (practice listing): one attribute flagged, one confirmed, one left unjudged. Photo: Amazon Berkeley Objects, CC BY 4.0.</figcaption>
+</figure>
+</section>
 
-<h2>Try it</h2>
-<ul>
-<li><a href="demo/live.html"><strong>Live check</strong></a>: upload a product image, enter its title and attributes (or load a small CSV batch), and run the check in your browser with <em>your own</em> Gemini API key. The key stays in the page's memory and is sent only to Google's API.</li>
-<li><a href="docs/DEMO-GUIDE.md"><strong>Demo guide</strong></a>: how it works, example listings and expected results.</li>
-<li><a href="demo/index.html"><strong>Pilot results</strong></a>: real model verdicts on practice (dev) listings, with example images and the colour-baseline comparison.</li>
+<h2>Why it matters</h2>
+<ul class="plain">
+<li><strong>Returns:</strong> a photo that disagrees with the text drives "not as described" returns.</li>
+<li><strong>Catalogue trust:</strong> shoppers stop trusting listings after a few wrong ones.</li>
+<li><strong>Seller ops:</strong> a short flag list beats reading every listing by hand.</li>
 </ul>
 
-<h2>Status</h2>
-<p>The pilot results come from practice data and are <strong>not</strong> the pre-registered evaluation. The full held-out evaluation (584 listings, gate fixed before measuring) is in progress on the Gemini free tier.</p>
+<h2>How it works</h2>
+<div class="cols">
+<div class="card">
+<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg>
+<h3>1. Read the listing</h3><p>Photo, title and attributes: category, colour, material.</p>
+</div>
+<div class="card">
+<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg>
+<h3>2. Compare per attribute</h3><p>A Gemini vision model returns match, mismatch or cannot tell, with a reason.</p>
+</div>
+<div class="card">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h12l-2 4 2 4H5"/></svg>
+<h3>3. Flag only when sure</h3><p>Below confidence 0.9 it abstains instead of guessing.</p>
+</div>
+</div>
+<p>Covers shoes, chairs, tables and sofas (Amazon Berkeley Objects data). The demo has a Results mode and a Live mode where you bring your own Gemini key.</p>
 
-<h2>More</h2>
-<ul>
-<li><a href="https://github.com/AnirudhKaushik0211/listing-mismatch">Source code, specification and evaluation log</a></li>
-<li><a href="docs/SECURITY.md">Security notes</a> · <a href="DATA-SOURCES.md">Data sources and licence</a></li>
+<h2 id="evaluation">Evaluation design <span class="status">held-out evaluation in progress</span></h2>
+<ul class="plain">
+<li><strong>Frozen gate:</strong> pass criteria, data, method and labels were fixed with hashes before any held-out test.</li>
+<li><strong>Held-out set:</strong> 200 natural items labelled by the owner, without seeing model output.</li>
+<li><strong>Planted cases:</strong> real listings with one attribute swapped, so the right answer is known. Reported separately from natural ones.</li>
+<li><strong>Abstention:</strong> "cannot tell" is a valid answer, and the threshold was set on development data only.</li>
 </ul>
+<p>No results are published yet. The Results page shows a pilot on practice listings, labelled as not a fair test.</p>
 
-<p><small>Built with AI coding agents; Anirudh wrote the spec, gates and reviews. Design reviews were run by AI review agents; the owner decided which findings to accept. No users, no production deployment and no adoption are claimed.</small></p>
+<h2>Built by</h2>
+<p>Product, pre-registered evaluation and quality gates specified by Anirudh Kaushik (product manager); AI coding agents implemented it. A portfolio project with no users.</p>
+
+<p class="sib">Sibling project: <a href="https://github.com/AnirudhKaushik0211/ClaimCheck-extension">ClaimCheck</a>, a browser extension that checks claims on product pages.</p>
+<footer>
+<a href="demo/live.html">Live mode</a> · <a href="docs/DEMO-GUIDE.md">Demo guide</a> · <a href="https://github.com/AnirudhKaushik0211/listing-mismatch">Source and evaluation log</a> · <a href="docs/SECURITY.md">Security</a> · <a href="DATA-SOURCES.md">Data sources</a>
+</footer>
 </main>
 </body>
 </html>
