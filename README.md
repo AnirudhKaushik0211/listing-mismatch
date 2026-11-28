@@ -20,8 +20,8 @@ Status: **held-out evaluation in progress**, no results published yet.
 - **Planted cases:** real listings with one attribute swapped, reported separately from natural ones.
 - **Abstention:** "cannot tell" is a valid answer; the threshold was set on development data only.
 
-## Built by
-Product, pre-registered evaluation and quality gates specified by Anirudh Kaushik (product manager); AI coding agents implemented it. Sibling project: [ClaimCheck](https://github.com/AnirudhKaushik0211/ClaimCheck-extension).
+## How it was made
+Product, pre-registered evaluation and quality gates specified by Anirudh Kaushik; AI coding agents implemented it.
 
 ## Details
 Checks whether a product listing's main photo contradicts its title and structured attributes (colour, item type, material, pattern, pack count), per attribute, with a vision-language model (VLM). It compares the model with a cheap non-AI baseline and measures how often real listings in a public catalog sample disagree with their own photo.
@@ -103,3 +103,12 @@ Open `labelling/index.html` by double-clicking it. It shows one listing at a tim
 
 ## Case study
 `docs/CASE-STUDY.md` is a template. Every real-world value in it is a placeholder to fill with checked numbers after a real run.
+
+## More projects by Anirudh
+
+- **ClaimCheck**: Checks food-label claims on Amazon.in against India's FSSAI rules. [Extension on GitHub](https://github.com/AnirudhKaushik0211/ClaimCheck-extension) · [Site](https://anirudhkaushik0211.github.io/ClaimCheck-audit/)
+
+---
+
+Built by Anirudh Kaushik, Account Consultant at Amazon, working on catalogue quality. [LinkedIn](https://www.linkedin.com/in/anirudh-kaushik0211/)  
+<sub>Personal project. Not affiliated with, endorsed by, or using any data from Amazon.</sub>

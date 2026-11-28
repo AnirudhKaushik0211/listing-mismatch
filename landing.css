@@ -26,4 +26,11 @@ ul.plain{padding-left:20px;margin:0}
 ul.plain li{margin:6px 0}
 .sib{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;color:var(--mute);font-size:.93rem}
 footer{font-size:.88rem;color:var(--mute);margin-top:12px}
+.more{border-top:1px solid var(--line);margin-top:32px;padding-top:4px;font-size:.93rem;color:var(--mute)}
+.more h2{font-size:1rem;margin:12px 0 6px;color:var(--ink)}
+.more ul{padding-left:20px;margin:0}
+footer.author{border-top:1px solid var(--line);margin-top:20px;padding-top:12px}
+footer.author p{margin:2px 0}
+footer.author .nav{margin-bottom:8px}
+footer.author .fine{font-size:.78rem}
 @media(max-width:640px){.cols{grid-template-columns:1fr}.hero h1{font-size:1.7rem}.tag{font-size:1.1rem}}
